@@ -12,3 +12,15 @@ spring:
       label: master
       profile: dev
       uri: http://127.0.0.1:9092/
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
