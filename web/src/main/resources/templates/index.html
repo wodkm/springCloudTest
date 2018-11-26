@@ -3,15 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>[[${params.title}}]]</title>
+    <title>[[${params.viewName}]]</title>
 </head>
 
 <body>
-    <div id='root'>
-    </div>
-    <script src="[[@{/js/}${params.viewName}.js]]"></script>
+    <div id='root'></div>
+    <script th:src="@{'/js/'+${params.viewName}+'.js'}"></script>
 </body>
-
-<script></script>
 
 </html>

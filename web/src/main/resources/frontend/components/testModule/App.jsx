@@ -1,6 +1,4 @@
-import React, {Component} from 'react';
-import '@stylesheets/App.css';
-import SemanticTest from '@components/testModule/SemanticTest.jsx'
+import React, { Component } from 'react';
 
 export default class App extends Component {
     render() {
@@ -9,8 +7,7 @@ export default class App extends Component {
                 <header className="App-header">
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
-                <p className="App-intro">To get started, edit <code>src/App.js</code> and save to reload.</p>
-                <SemanticTest></SemanticTest>
+                <p className="App-intro">To get started, edit <code>src/App.js</code> and save to reload.q  qweqwe</p>
             </div>
         );
     }

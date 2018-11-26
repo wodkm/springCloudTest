@@ -27,7 +27,7 @@ module.exports = {
             '@static': path.resolve(__dirname, '../static'),
             '@stylesheets': path.resolve(__dirname, '../static/stylesheets'),
             '@images': path.resolve(__dirname, '../static/images'),
-            '@components': path.resolve(__dirname, '/components'),
+            '@components': path.resolve('components'),
             '@modules': path.resolve(__dirname, '/modules'),
             '@templates': path.resolve(__dirname, '/templates'),
         }
@@ -69,7 +69,7 @@ module.exports = {
                 ]
             }, {
                 test: /\.css$/,
-                use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
+                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
             }
         ]
     }
