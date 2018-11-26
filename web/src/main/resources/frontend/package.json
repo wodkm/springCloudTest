@@ -6,13 +6,6 @@
   "scripts": {
     "webpack": "webpack --config ./webpack.config.js"
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "parser": "babel-eslint"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {

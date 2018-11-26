@@ -1,2 +1,4 @@
 node_modules/
 semantic/
+/static/js
+/static/resources
