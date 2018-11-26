@@ -7,9 +7,12 @@ server:
 spring:
   cloud:
     config:
+      label: master
       server:
         git:
           uri: https://github.com/wodkm/springCloudTest-config/blob/master
           searchPaths:
+          username:
+          password:
   application:
     name: config
