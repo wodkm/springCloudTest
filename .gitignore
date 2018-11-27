@@ -1,4 +1,4 @@
 node_modules/
 semantic/
-/static/js
-/static/resources
+static/js/
+static/resources/
