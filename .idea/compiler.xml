@@ -7,13 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config" />
+        <module name="config-client" />
         <module name="server" />
-        <module name="springCloudTest" />
         <module name="web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="config-client" target="1.8" />
       <module name="demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
