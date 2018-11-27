@@ -1,0 +1,15 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9090/eureka/
+server:
+  port: 9093
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      name: config
+      discovery:
+        enabled: true
+        serviceId: config
