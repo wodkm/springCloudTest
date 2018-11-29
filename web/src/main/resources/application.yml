@@ -4,6 +4,10 @@ eureka:
       defaultZone: http://127.0.0.1:9090/eureka/
 server:
   port: 9091
+  servlet:
+    jsp:
+      init-parameters:
+        development: true
 spring:
   application:
     name: web

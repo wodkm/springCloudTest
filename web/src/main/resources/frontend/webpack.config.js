@@ -28,8 +28,9 @@ module.exports = {
             '@stylesheets': path.resolve(__dirname, '../static/stylesheets'),
             '@images': path.resolve(__dirname, '../static/images'),
             '@components': path.resolve('components'),
-            '@modules': path.resolve(__dirname, '/modules'),
-            '@templates': path.resolve(__dirname, '/templates'),
+            '@modules': path.resolve(__dirname, 'modules'),
+            '@templates': path.resolve(__dirname, 'templates'),
+            '@utils': path.resolve(__dirname, 'utils')
         }
     },
     performance: {
