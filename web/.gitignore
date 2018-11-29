@@ -25,6 +25,3 @@
 /.nb-gradle/
 
 node_modules/
-semantic/
-static/js/
-static/resources/
