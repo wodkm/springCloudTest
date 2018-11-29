@@ -17,7 +17,7 @@ spring:
       profile: dev
       uri: http://127.0.0.1:9092/
   thymeleaf:
-    prefix: classpath:/templates/
+    prefix: classpath:templates/
     suffix: .html
     mode: HTML5
     encoding: UTF-8
