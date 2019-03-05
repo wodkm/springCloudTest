@@ -10,8 +10,8 @@ files.map((item, index) => {
 });
 
 module.exports = {
-    // mode: 'development',
-    mode: 'production',
+    mode: 'development',
+    // mode: 'production',
     entry: entries,////指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
     output: {
         path: path.resolve(__dirname, '../static'), // 输出的路径
@@ -19,18 +19,22 @@ module.exports = {
         filename: 'js/[name].js'  // 打包后文件
     },
     plugins: [
-        new CleanWebpackPlugin([__dirname + '../static/js']),
-        new CleanWebpackPlugin([__dirname + '../static/resources']),
+        new CleanWebpackPlugin([__dirname + '/../static/js'], {
+            root: path.resolve(__dirname, '../')
+        }),
+        new CleanWebpackPlugin([__dirname + '/../static/resources'], {
+            root: path.resolve(__dirname, '../')
+        }),
     ],
     resolve: {
         alias: {
             '@static': path.resolve(__dirname, '../static'),
-            '@stylesheets': path.resolve(__dirname, '../static/stylesheets'),
+            '@stylesheets': path.resolve('stylesheets'),
             '@images': path.resolve(__dirname, '../static/images'),
             '@components': path.resolve('components'),
             '@modules': path.resolve(__dirname, 'modules'),
             '@templates': path.resolve(__dirname, 'templates'),
-            '@utils': path.resolve(__dirname, 'utils')
+            '@utils': path.resolve(__dirname, 'utils'),
         }
     },
     performance: {
@@ -58,19 +62,30 @@ module.exports = {
                 exclude: /node_modules/
             }, {
                 test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'resources/',
-                            limit: '1024',//超过1M的文件使用file-loader
-                        }
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'resources/',
+                        limit: '1024',//超过1M的文件使用file-loader
                     }
-                ]
+                }]
             }, {
                 test: /\.css$/,
-                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader'
+                }]
+            }, {
+                test: /\.scss$/,
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader'
+                }, {
+                    loader: 'sass-loader'
+                }]
             }
         ]
     }

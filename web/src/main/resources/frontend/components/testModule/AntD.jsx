@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     Input
 } from 'antd';
-import '@stylesheets/testModule/testModule.css';
+import '@stylesheets/testModule/testModule.scss';
 import 'antd/dist/antd.css';
 
 export default class AntD extends Component {
@@ -13,7 +13,8 @@ export default class AntD extends Component {
     render() {
         return (
             <div className="form">
-                <h1>Title123</h1>
+                <h1>一个测试的表单大标题</h1>
+                <h2>一个测试的表单小标题</h2>
                 <div>
                     <Input />
                 </div>
