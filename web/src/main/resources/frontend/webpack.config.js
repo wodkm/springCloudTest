@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 //遍历指定文件目录，使用多入口文件
@@ -25,7 +26,13 @@ module.exports = {
         new CleanWebpackPlugin([__dirname + '/../static/resources'], {
             root: path.resolve(__dirname, '../')
         }),
+        new webpack.BannerPlugin('一坨彩蛋'),
     ],
+    watchOptions: {
+        poll: 1000,//监测修改的时间(ms)
+        aggregateTimeout: 500, //防止重复按键，500毫米内算按键一次
+        ignored: /node_modules/,//不监测
+    },
     resolve: {
         alias: {
             '@static': path.resolve(__dirname, '../static'),
