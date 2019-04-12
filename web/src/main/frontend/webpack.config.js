@@ -13,17 +13,20 @@ files.map((item, index) => {
 module.exports = {
     mode: 'development',
     // mode: 'production',
+    node: {
+        fs: 'empty'//nodejs环境变量
+    },
     entry: entries,////指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
     output: {
-        path: path.resolve(__dirname, '../static'), // 输出的路径
+        path: path.resolve(__dirname, '../resources/static'), // 输出的路径
         publicPath: '',//资源引用路径
         filename: 'js/[name].js'  // 打包后文件
     },
     plugins: [
-        new CleanWebpackPlugin([__dirname + '/../static/js'], {
+        new CleanWebpackPlugin([__dirname + '/../resources/static/js'], {
             root: path.resolve(__dirname, '../')
         }),
-        new CleanWebpackPlugin([__dirname + '/../static/resources'], {
+        new CleanWebpackPlugin([__dirname + '/../resources/static/resources'], {
             root: path.resolve(__dirname, '../')
         }),
         new webpack.BannerPlugin('一坨彩蛋'),
@@ -35,9 +38,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@static': path.resolve(__dirname, '../static'),
+            '@static': path.resolve(__dirname, '../resources/static'),
             '@stylesheets': path.resolve('stylesheets'),
-            '@images': path.resolve(__dirname, '../static/images'),
+            '@images': path.resolve(__dirname, '../resources/static/images'),
             '@components': path.resolve('components'),
             '@modules': path.resolve(__dirname, 'modules'),
             '@templates': path.resolve(__dirname, 'templates'),

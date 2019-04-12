@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>[[${params.viewName}]]</title>
+    <link href="../stylesheets/common.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id='root'></div>
-    <script>window.contextPath = "[[@{/}]]";</script>
-    <script th:src="@{'/js/'+${params.viewName}+'.js'}"></script>
+<div id='root'></div>
 </body>
+<script th:inline="javascript">
+    window.contextPath = [[@{''}]];
+    window.params =/*[[${params.data}]]*/ null;
+</script>
+<script th:src="@{'/js/'+${params.viewName}+'.js'}"></script>
 
 </html>
